@@ -67,6 +67,12 @@ O conteúdo do arquivo foi posteriormente consultado no terminal.
 
 **Material complementar:** a página do projeto apresenta um resumo visual dos conceitos estudados e 8 flashcards interativos para revisão.
 
-[**Acessar página do laboratório**](LINK_DA_GITHUB_PAGES)
+[**Acessar página do laboratório**](https://brunogacarvalho.github.io/lab-168-instalar-configurar-aws-cli/)
 
-*Escola da Nuvem | Fundamentos de Computação em Nuvem AWS*
+---
+
+**Professor:** [Raphael Ohlsen](https://www.linkedin.com/in/raphael-ohlsen/)
+
+**Instituição:** [Escola da Nuvem](https://escoladanuvem.org/) | [LinkedIn](https://www.linkedin.com/school/escola-da-nuvem/)
+
+*Laboratório realizado como parte da formação em Computação em Nuvem AWS.*
