@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lab 168 - Instalação e configuração da AWS CLI em uma instância EC2, com consultas ao IAM.">
+  <title>Lab 168 - AWS CLI | Bruno Carvalho</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">ESCOLA DA NUVEM · AWS</span>
+      <h1>Instalar e Configurar a AWS CLI</h1>
+      <p class="subtitle">
+        Laboratório 168 - Interação com serviços AWS por meio da linha de comando.
+      </p>
+
+      <div class="hero-tags">
+        <span>Amazon EC2</span>
+        <span>AWS CLI</span>
+        <span>AWS IAM</span>
+        <span>Linux</span>
+      </div>
+
+      <a class="github-link"
+         href="https://github.com/brunogacarvalho/lab-168-instalar-configurar-aws-cli"
+         target="_blank" rel="noopener noreferrer">
+        Ver documentação no GitHub ↗
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-label">01 · VISÃO GERAL</span>
+        <h2>O que foi praticado</h2>
+        <p>
+          Instalação e configuração da AWS CLI em uma instância Linux
+          do Amazon EC2, utilizando SSH para acessar o terminal e
+          executar comandos relacionados ao IAM.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="card-icon">☁</span>
+          <h3>AWS CLI</h3>
+          <p>Interface de linha de comando para interagir com os serviços da AWS.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">⌘</span>
+          <h3>Ambiente Linux</h3>
+          <p>Instalação e execução de comandos em uma instância EC2 acessada por SSH.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">🔐</span>
+          <h3>IAM</h3>
+          <p>Consulta de usuários, grupos e políticas por meio da AWS CLI.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-label">02 · CONCEITOS</span>
+        <h2>Componentes utilizados</h2>
+      </div>
+
+      <div class="content-grid">
+        <article class="content-card">
+          <h3>Amazon EC2</h3>
+          <p>
+            Serviço que disponibiliza capacidade computacional na nuvem.
+            Neste laboratório, uma instância Linux foi utilizada como
+            ambiente para instalar e executar a AWS CLI.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h3>SSH e PuTTY</h3>
+          <p>
+            O SSH permite acessar remotamente a instância Linux.
+            O PuTTY foi utilizado no Windows como cliente SSH,
+            com autenticação por chave privada.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h3>AWS CLI</h3>
+          <p>
+            Ferramenta que permite executar operações nos serviços AWS
+            pelo terminal. Os comandos podem consultar recursos e
+            automatizar tarefas sem utilizar o console web.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h3>AWS IAM</h3>
+          <p>
+            Serviço de gerenciamento de identidade e acesso.
+            Permite controlar usuários, grupos, permissões e políticas
+            que determinam quais ações podem ser executadas.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-label">03 · PRÁTICA</span>
+        <h2>Comandos utilizados</h2>
+        <p>Alguns dos comandos principais executados durante o laboratório.</p>
+      </div>
+
+      <div class="command-list">
+        <article class="command-card">
+          <div>
+            <h3>Verificar a versão</h3>
+            <p>Confere se a AWS CLI está instalada e disponível no terminal.</p>
+          </div>
+          <code>aws --version</code>
+        </article>
+
+        <article class="command-card">
+          <div>
+            <h3>Configurar a AWS CLI</h3>
+            <p>Define credenciais, região padrão e formato das respostas.</p>
+          </div>
+          <code>aws configure</code>
+        </article>
+
+        <article class="command-card">
+          <div>
+            <h3>Consultar usuários</h3>
+            <p>Retorna os usuários IAM existentes na conta.</p>
+          </div>
+          <code>aws iam list-users</code>
+        </article>
+
+        <article class="command-card">
+          <div>
+            <h3>Consultar políticas locais</h3>
+            <p>Lista as políticas gerenciadas pelo cliente.</p>
+          </div>
+          <code>aws iam list-policies --scope Local</code>
+        </article>
+
+        <article class="command-card">
+          <div>
+            <h3>Recuperar uma versão de política</h3>
+            <p>Obtém o documento JSON de uma versão específica da política IAM.</p>
+          </div>
+          <code>aws iam get-policy-version</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-label">04 · APRENDIZADOS</span>
+        <h2>Conhecimentos desenvolvidos</h2>
+      </div>
+
+      <div class="learning-panel">
+        <ul>
+          <li>Conexão remota com instâncias Linux utilizando SSH.</li>
+          <li>Instalação e verificação da AWS CLI em uma instância EC2.</li>
+          <li>Configuração de credenciais e parâmetros padrão da ferramenta.</li>
+          <li>Execução de comandos para consultar recursos do IAM.</li>
+          <li>Recuperação de documentos de políticas em formato JSON.</li>
+          <li>Redirecionamento da saída de comandos para arquivos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section flashcards-section">
+      <div class="section-heading">
+        <span class="section-label">05 · REVISÃO</span>
+        <h2>Flashcards interativos</h2>
+        <p>Teste seus conhecimentos sobre os conceitos estudados no laboratório.</p>
+      </div>
+
+      <div class="flashcard" id="flashcard">
+        <span class="card-counter" id="card-counter">1 / 8</span>
+        <span class="card-hint">PERGUNTA</span>
+        <h3 id="question">O que é a AWS CLI?</h3>
+        <p id="answer" class="answer hidden"></p>
+        <button id="show-answer" type="button">Mostrar resposta</button>
+      </div>
+
+      <div class="flashcard-controls">
+        <button id="previous" type="button" class="secondary-button">Anterior</button>
+        <button id="next" type="button" class="secondary-button">Próximo</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Lab 168 - Instalar e Configurar a AWS CLI</p>
+      <p>Escola da Nuvem · Fundamentos de Computação em Nuvem AWS</p>
+      <a href="https://github.com/brunogacarvalho/lab-168-instalar-configurar-aws-cli"
+         target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    const flashcards = [
+      {
+        question: "O que é a AWS CLI?",
+        answer: "É uma ferramenta de linha de comando que permite interagir com os serviços da AWS por meio de comandos no terminal."
+      },
+      {
+        question: "Qual foi a função do Amazon EC2 neste laboratório?",
+        answer: "Disponibilizar uma instância Linux utilizada como ambiente para instalar e executar a AWS CLI."
+      },
+      {
+        question: "Para que serve o SSH?",
+        answer: "Permite estabelecer uma conexão segura com uma máquina remota e executar comandos nela. Neste laboratório, foi utilizado para acessar a instância EC2."
+      },
+      {
+        question: "O que o comando aws configure faz?",
+        answer: "Inicia a configuração da AWS CLI, permitindo informar Access Key ID, Secret Access Key, região padrão e formato de saída."
+      },
+      {
+        question: "Qual é a função do AWS IAM?",
+        answer: "Gerenciar identidades e permissões na AWS, controlando quais ações usuários e outros recursos podem executar."
+      },
+      {
+        question: "Qual é a diferença entre list-users e list-policies?",
+        answer: "aws iam list-users consulta os usuários IAM. aws iam list-policies consulta as políticas gerenciadas, que definem permissões."
+      },
+      {
+        question: "O que faz o parâmetro --scope Local?",
+        answer: "Restringe a listagem às políticas gerenciadas pelo cliente, em vez de incluir as políticas gerenciadas pela AWS."
+      },
+      {
+        question: "Para que serve o operador > em um comando?",
+        answer: "Redireciona a saída do comando para um arquivo. No desafio, foi utilizado para salvar o documento da política IAM em lab_policy.json."
+      }
+    ];
+
+    let currentCard = 0;
+
+    const question = document.getElementById("question");
+    const answer = document.getElementById("answer");
+    const counter = document.getElementById("card-counter");
+    const showButton = document.getElementById("show-answer");
+
+    function renderCard() {
+      const card = flashcards[currentCard];
+
+      question.textContent = card.question;
+      answer.textContent = card.answer;
+      counter.textContent = `${currentCard + 1} / ${flashcards.length}`;
+
+      answer.classList.add("hidden");
+      showButton.textContent = "Mostrar resposta";
+    }
+
+    showButton.addEventListener("click", () => {
+      answer.classList.toggle("hidden");
+      showButton.textContent = answer.classList.contains("hidden")
+        ? "Mostrar resposta"
+        : "Ocultar resposta";
+    });
+
+    document.getElementById("previous").addEventListener("click", () => {
+      currentCard = (currentCard - 1 + flashcards.length) % flashcards.length;
+      renderCard();
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+      currentCard = (currentCard + 1) % flashcards.length;
+      renderCard();
+    });
+
+    renderCard();
+  </script>
+
+</body>
+</html>
